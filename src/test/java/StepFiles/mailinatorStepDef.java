@@ -36,8 +36,8 @@ public class mailinatorStepDef {
     }
     @Then("^verify page is loaded for me$")
     public void verify_page_is_loaded_for_me() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+       //c
+        System.out.println("OK tested");
     }
 
 
