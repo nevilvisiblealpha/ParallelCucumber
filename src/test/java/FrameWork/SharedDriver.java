@@ -24,6 +24,7 @@ public class SharedDriver {
     public void init() throws Exception {
         if (!startBrowser) {
 
+
             File file = new File("src\\test\\resources\\chromedriver.exe");
             System.setProperty("webdriver.chrome.driver",file.getAbsolutePath());
             driver = new ChromeDriver();
