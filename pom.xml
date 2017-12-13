@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alphatest</groupId>
+    <artifactId>alpha</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.53.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+
+
+
+        <dependency>
+
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-jvm</artifactId>
+            <version>1.2.4</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire</artifactId>
+            <version>2.16</version>
+            <type>pom</type>
+        </dependency>
+
+    </dependencies>
+
+<build>
+
+    <plugins>
+
+        <plugin>
+            <groupId>com.github.temyers</groupId>
+            <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+            <version>4.2.0</version>
+            <executions>
+                <execution>
+                    <id>generateRunners</id>
+                    <phase>generate-test-sources</phase>
+                    <goals>
+                        <goal>generateRunners</goal>
+                    </goals>
+                    <configuration>
+                        <!-- Mandatory -->
+                        <!-- List of package names to scan for glue code. -->
+                        <glue>
+                            <package>StepFiles</package>
+                            <package>FrameWork</package>
+                        </glue>
+                        <!-- These are optional, with the default values -->
+                        <!-- Where to output the generated tests -->
+                        <!--outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory-->
+                        <!-- The directory, which must be in the root of the runtime classpath, containing your feature files.  -->
+                        <featuresDirectory>D:/ClientApp_Automation/MailAutomation/src/test/resources/Feature</featuresDirectory>
+                        <!--featuresDirectory>D:/ClientApp_Automation/MailAutomation/src/test/java/Feature/Mailinator2.Feature</featuresDirectory-->
+                        <!-- Directory where the cucumber report files shall be written  -->
+                        <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+                        <format>json,html</format>
+                        <!-- List of cucumber plugins. When none are provided the json formatter is used. For more
+                             advanced usage see section about configuring cucumber plugins -->
+
+                        <!-- CucumberOptions.strict property -->
+                        <strict>true</strict>
+                        <!-- CucumberOptions.monochrome property -->
+                        <monochrome>true</monochrome>
+                        <!-- The tags to run, maps to CucumberOptions.tags property. Default is no tags. -->
+                        <tags>
+                            <tag>@web</tag>
+                        </tags>
+                        <!-- Generate TestNG runners instead of JUnit ones. -->
+                        <useTestNG>false</useTestNG>
+                        <!-- The naming scheme to use for the generated test classes.  One of 'simple' or 'feature-title' -->
+                        <namingScheme>simple</namingScheme>
+                        <!-- The class naming pattern to use.  Only required/used if naming scheme is 'pattern'.-->
+                        <namingPattern>Parallel{c}IT</namingPattern>
+                        <!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per scenario.  FEATURE generates a runner per feature. -->
+                        <parallelScheme>SCENARIO</parallelScheme>
+
+                        <!-- Specify a custom template for the generated sources (this is a path relative to the project base directory) -->
+                        <!--customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate-->
+                        <!-- Specify a custom package name for generated sources. Default is no package.-->
+
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19</version>
+            <configuration>
+                <forkCount>3</forkCount>
+                <reuseForks>true</reuseForks>
+                <includes>
+                    <include>**/Parallel*IT.class</include>
+                </includes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+</project>
