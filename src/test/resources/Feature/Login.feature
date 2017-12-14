@@ -12,7 +12,7 @@ Feature: Login feature For Alpha Exchange
 
     Examples:
   | Username   | Password  |LoggedinUserName|
-  |scott+345@alpha-exchange.com| %\;7CX!]|James Grant|
+  |scott+345@alpha-exchange.com| %\;7CX!]|James rant|
 
 
   @webAE

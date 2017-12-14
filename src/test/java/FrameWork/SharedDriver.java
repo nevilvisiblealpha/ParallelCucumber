@@ -4,8 +4,11 @@ package FrameWork;
 
 
 
+import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.After;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -40,7 +43,13 @@ public class SharedDriver {
     }
 
     @After
-    public void cleanUp() {
+    public void cleanUp(Scenario scenario) {
+        if(scenario.isFailed())
+        {
+            final byte[] screenshot = ((TakesScreenshot) driver)
+                    .getScreenshotAs(OutputType.BYTES);
+            scenario.embed(screenshot, "image/png");
+        }
         driver.close();
         driver.quit();
 
