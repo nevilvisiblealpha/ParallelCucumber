@@ -93,7 +93,7 @@
                         <monochrome>true</monochrome>
                         <!-- The tags to run, maps to CucumberOptions.tags property. Default is no tags. -->
                         <tags>
-                            <tag>@web</tag>
+                            <tag>@webAE</tag>
                         </tags>
                         <!-- Generate TestNG runners instead of JUnit ones. -->
                         <useTestNG>false</useTestNG>

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = {"D:\\ClientApp_Automation\\MailAutomation\\src\\test\\resources\\Feature"},
         format = {"pretty"},
 //plugin = {"org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter"},
-
+        tags={"@webAE"},
 
         glue={"StepFiles","FrameWork"}
 )

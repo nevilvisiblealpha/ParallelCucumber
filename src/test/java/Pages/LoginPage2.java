@@ -1,6 +1,7 @@
 package Pages;
 
 import FrameWork.SharedDriver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -24,5 +25,10 @@ public class LoginPage2 {
        driver.findElement(By.id("inboxfield")).sendKeys(value);
        driver.findElement(By.xpath("//button[@class='btn btn-dark']")).click();
     }
+
+
+
+
+
 
 }
