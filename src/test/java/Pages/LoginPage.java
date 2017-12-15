@@ -22,13 +22,24 @@ public class LoginPage {
 
 
     public void  load(){
+        String URL = System.getProperty("URL");
+        if(URL.equalsIgnoreCase("null"))
+        {
+            driver.get("http://www.mailinator.com");
+        }else{
+            driver.get(URL);
 
-        driver.get("http://www.mailinator.com");
+        }
     }
 
     public void  aeLoad(){
-
+        String URL = System.getProperty("URL");
+        if(URL==null)
+        {
         driver.get("https://braai-dev.alpha-exchange.com/users/sign_in");
+        }else{
+            driver.get(URL);
+        }
     }
 
     public void loginWithUserNameAndPassword(String username,String Password)
