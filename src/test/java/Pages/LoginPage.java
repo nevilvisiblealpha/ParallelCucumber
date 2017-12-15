@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import static java.lang.System.*;
+
 public class LoginPage {
     public WebDriver driver;
     public LoginPage(SharedDriver sharedDriver) {
@@ -33,11 +35,12 @@ public class LoginPage {
     }*/
 
     public void  aeLoad(){
-        String URL = System.getProperty("URL");
-        String build_display_name = System.getProperty("BUILD_DISPLAY_NAME");
+        String URL = getProperty("URL");
+       // String build_display_name = getProperty("BUILD_DISPLAY_NAME");
+        String build_display_name = getenv("URL");
 
-        System.out.println("*********************************************"+URL+"***********************************");
-        System.out.println("*********************************************"+build_display_name+"***********************************");
+        out.println("*********************************************"+URL+"***********************************");
+        out.println("*********************************************"+build_display_name+"***********************************");
         if(URL!=null)
         {
             driver.get(URL);
