@@ -21,7 +21,7 @@ public class LoginPage {
     @FindBy(how=How.XPATH,using="//a[@class='profile dropdown-toggle']//span[@class='visible-lg-inline'][text()='?']")WebElement LoggedInName;
 
 
-    public void  load(){
+   /* public void  load(){
         String URL = System.getProperty("URL");
         if(URL.equalsIgnoreCase("null"))
         {
@@ -30,10 +30,12 @@ public class LoginPage {
             driver.get(URL);
 
         }
-    }
+    }*/
 
     public void  aeLoad(){
         String URL = System.getProperty("URL");
+
+        System.out.println("*********************************************"+URL+"***********************************");
         if(URL!=null)
         {
             driver.get(URL);
