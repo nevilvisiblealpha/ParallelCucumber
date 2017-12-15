@@ -34,11 +34,12 @@ public class LoginPage {
 
     public void  aeLoad(){
         String URL = System.getProperty("URL");
-        if(URL==null)
+        if(URL!=null)
         {
-        driver.get("https://braai-dev.alpha-exchange.com/users/sign_in");
-        }else{
             driver.get(URL);
+
+        }else{
+            driver.get("https://braai-dev.alpha-exchange.com/users/sign_in");
         }
     }
 
