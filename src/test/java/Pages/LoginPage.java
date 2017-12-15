@@ -34,8 +34,10 @@ public class LoginPage {
 
     public void  aeLoad(){
         String URL = System.getProperty("URL");
+        String build_display_name = System.getProperty("BUILD_DISPLAY_NAME");
 
         System.out.println("*********************************************"+URL+"***********************************");
+        System.out.println("*********************************************"+build_display_name+"***********************************");
         if(URL!=null)
         {
             driver.get(URL);
