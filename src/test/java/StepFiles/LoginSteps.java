@@ -13,12 +13,7 @@ public class LoginSteps {
         this.loginPage = loginPageinit;
     }
 
-    @Given("^I go to the Login Page$")
-    public void i_go_to_the_Login_Page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        loginPage.load();
 
-    }
 
 
 
