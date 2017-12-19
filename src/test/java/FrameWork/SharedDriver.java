@@ -32,7 +32,7 @@ public class SharedDriver {
             {
                 File chModFile = new File("src/test/resources/");
                 String pathChModFile = chModFile.getAbsolutePath();
-                Runtime.getRuntime().exec("chmod 777 "+pathChModFile+"");
+                Runtime.getRuntime().exec("chmod 777 * "+pathChModFile+"");
               file  = new File("src/test/resources/chromedriver");
             }
             else{
