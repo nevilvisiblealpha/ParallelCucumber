@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-        features = {"D:\\ClientApp_Automation\\MailAutomation\\src\\test\\resources\\Feature"},
+        features = {"src/test/resources/Feature"},
         format = {"pretty"},
 //plugin = {"org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter"},
         tags={"@webAE"},

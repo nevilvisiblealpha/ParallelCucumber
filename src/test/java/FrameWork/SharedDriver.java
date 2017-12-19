@@ -28,10 +28,12 @@ public class SharedDriver {
         if (!startBrowser) {
             File file=null;
             String OSNAME = System.getProperty("os.name");
-            System.out.println("*************************************"+OSNAME+"******************************************");
-            if (OSNAME == "LINUX")
+            if (OSNAME.equalsIgnoreCase("Linux"))
             {
-              file  = new File("src\\test\\resources\\chromedriver");
+              file  = new File("src/test/resources/chromedriver");
+            }
+            else{
+                file  = new File("src/test/resources/chromedriver.exe");
             }
 
             System.setProperty("webdriver.chrome.driver",file.getAbsolutePath());
