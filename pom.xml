@@ -79,7 +79,7 @@
                         <!-- Where to output the generated tests -->
                         <!--outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory-->
                         <!-- The directory, which must be in the root of the runtime classpath, containing your feature files.  -->
-                        <featuresDirectory>D:/ClientApp_Automation/MailAutomation/src/test/resources/Feature</featuresDirectory>
+                        <featuresDirectory>src/test/resources/Feature</featuresDirectory>
                         <!--featuresDirectory>D:/ClientApp_Automation/MailAutomation/src/test/java/Feature/Mailinator2.Feature</featuresDirectory-->
                         <!-- Directory where the cucumber report files shall be written  -->
                         <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
