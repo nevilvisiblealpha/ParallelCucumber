@@ -30,7 +30,7 @@ public class SharedDriver {
             String OSNAME = System.getProperty("os.name");
             if (OSNAME.equalsIgnoreCase("Linux"))
             {
-                File chModFile = new File("src/test/resources/");
+                File chModFile = new File("src/test/resources/chromedriver");
                 String pathChModFile = chModFile.getAbsolutePath();
                 Runtime.getRuntime().exec("chmod 777 * "+pathChModFile+"");
               file  = new File("src/test/resources/chromedriver");
