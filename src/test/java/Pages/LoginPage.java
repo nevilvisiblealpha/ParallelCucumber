@@ -64,11 +64,7 @@ public class LoginPage {
         return isDisplayed;
     }
 
-    public void EnterEmailAddress(String value){
 
-       driver.findElement(By.id("inboxfield")).sendKeys(value);
-       driver.findElement(By.xpath("//button[@class='btn btn-dark']")).click();
-    }
 
     public void isErrorMessageDisplayed(String ErrorMessage)
     {

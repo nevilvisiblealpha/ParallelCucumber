@@ -23,7 +23,8 @@ Feature: Login feature For Alpha Exchange
     Then I should be able to see ErrorMessage as "<ErrorMessage>"
 
     Examples:
-      | Username   | Password  |ErrorMessage|
-      |scott+345@alpha-exchange.com |12334 |Invalid Email or password.|
-      | scot@aphhange.com |%\;7CX!] |Invalid Email or password.|
+      | Username                    | Password  |ErrorMessage               |
+      |scott+345@alpha-exchange.com |1233       |Invalid Email or password. |
+      | scot@aphhange.com           |%\;7CX!]   |Invalid Email or password. |
+      |                             |%\;7CX!]   | Invalid Email or password.|
 
