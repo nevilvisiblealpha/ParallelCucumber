@@ -26,9 +26,14 @@ public class SharedDriver {
 
     public void init() throws Exception {
         if (!startBrowser) {
+            File file=null;
+            String OSNAME = System.getProperty("os.name");
+            System.out.println("*************************************"+OSNAME+"******************************************");
+            if (OSNAME == "LINUX")
+            {
+              file  = new File("src\\test\\resources\\chromedriver");
+            }
 
-
-            File file = new File("src\\test\\resources\\chromedriver.exe");
             System.setProperty("webdriver.chrome.driver",file.getAbsolutePath());
             driver = new ChromeDriver();
             driver.manage().window().maximize();
