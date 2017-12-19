@@ -26,5 +26,5 @@ Feature: Login feature For Alpha Exchange
       | Username                    | Password  |ErrorMessage               |
       |scott+345@alpha-exchange.com |1233       |Invalid Email or password. |
       | scot@aphhange.com           |%\;7CX!]   |Invalid Email or password. |
-      |                             |%\;7CX!]   | Invalid Email or password.|
+
 
