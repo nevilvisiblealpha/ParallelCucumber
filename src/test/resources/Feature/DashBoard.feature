@@ -27,25 +27,25 @@ Scenario: Dashboard redirection on buy side login
     Then I should see same comment shows up when opening research report by clicking on the title
 
 
-  @test
+  @webAE
     Scenario: Verify user is able to see filtered Activity log based on start date
       Given I login as buyer side user
       When I navigate to the "Activity Log" of User Profile Dropdown
       When I select "10" days back from date and apply filter
       Then I should see from "10" days back activity logs
 
-  @test
+  @webAE
   Scenario: Verify user is able to see filtered Activity log based on start date
     Given I login as buyer side user
     When I navigate to the "Personal Briefcase" of User Profile Dropdown
 
-  @test
+  @webAE
   Scenario: Verify user is able to see filtered Activity log based on start date
     Given I login as buyer side user
     When I navigate to the "Settings" of User Profile Dropdown
 
 
-  @test
+  @webAE
   Scenario: Verify user is able to see filtered Activity log based on start date
     Given I login as buyer side user
     When I navigate to the "Following" of User Profile Dropdown
