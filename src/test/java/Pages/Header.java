@@ -2,11 +2,10 @@ package Pages;
 
 import FrameWork.BasePage;
 import FrameWork.SharedDriver;
-import com.thoughtworks.selenium.webdriven.commands.Click;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import sun.plugin.util.UserProfile;
+
 
 public class Header extends BasePage {
 
