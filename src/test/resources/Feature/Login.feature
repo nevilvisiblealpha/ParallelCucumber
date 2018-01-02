@@ -20,11 +20,18 @@ Feature: Login feature For Alpha Exchange
 
     Given I go to the Login Page of Alpha Exchange
     When I enter Username as "<Username>"  and Password as "<Password>" in Login Page
-    Then I should be able to see ErrorMessage as "<ErrorMessage>"
+    Then I should be able to see Message as "<ErrorMessage>"
 
     Examples:
       | Username                    | Password  |ErrorMessage               |
       |scott+345@alpha-exchange.com |1233       |Invalid Email or password. |
       | scot@aphhange.com           |%\;7CX!]   |Invalid Email or password. |
+
+  @webAE
+    Scenario: verify new user is Able to sign up
+      Given I go to the Login Page of Alpha Exchange
+      When I try to signup with "Automation" as firstname and "User" as lastname
+      Then I should be able to see Message as "Thank you for signing up! We'll be verifying your account shortly."
+
 
 

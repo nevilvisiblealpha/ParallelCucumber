@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/Feature"},
         format = {"pretty"},
 //plugin = {"org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter"},
-        tags={"@webAE"},
+        tags={"@test"},
 
-        glue={"StepFiles","FrameWork"}
+        glue={"StepFiles","FrameWork","Pages"}
 )
 public class TestRunner
 {

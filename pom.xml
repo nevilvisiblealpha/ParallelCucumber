@@ -21,6 +21,12 @@
             <version>1.2.4</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
 
 
 
@@ -74,6 +80,7 @@
                         <glue>
                             <package>StepFiles</package>
                             <package>FrameWork</package>
+                            <package>Pages</package>
                         </glue>
                         <!-- These are optional, with the default values -->
                         <!-- Where to output the generated tests -->
@@ -122,6 +129,14 @@
                 <includes>
                     <include>**/Parallel*IT.class</include>
                 </includes>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
             </configuration>
         </plugin>
     </plugins>
