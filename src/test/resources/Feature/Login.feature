@@ -6,6 +6,7 @@ Feature: Login feature For Alpha Exchange
   Scenario Outline:  Verify login feature with valid data
 
     Given I go to the Login Page of Alpha Exchange
+    #2.1.1
     When I enter Username as "<Username>"  and Password as "<Password>" in Login Page
     Then I should be able to see logged in user as "<LoggedinUserName>"
 

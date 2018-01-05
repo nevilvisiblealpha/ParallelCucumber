@@ -40,7 +40,9 @@ public class BasePage {
 
     public BasePage waitUntilDisappear(By Locator,int timeout)
     {
+
         WebDriverWait wait = new WebDriverWait(driver,timeout);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(Locator));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(Locator));
 
         return this;

@@ -18,6 +18,7 @@ public class DashboardPage extends BasePage {
     public WebDriver driver;
     int commmentCount;
    static String commentValue;
+   static String ReportName;
     public DashboardPage(SharedDriver sharedDriver) {
         super( sharedDriver.getDriver());
         this.driver = sharedDriver.getDriver();
@@ -26,7 +27,7 @@ public class DashboardPage extends BasePage {
 
     By FeedTab = By.xpath("//ul[@class='nav navbar-nav menu']/li/a[text()='Feed']");
     By ExploreTab = By.xpath("//ul[@class='nav navbar-nav menu']/li/a[text()='Explore']");
-    By DashBoardTab(String Value) {return By.xpath("//ul[@class='nav navbar-nav menu']/li/a[text()='"+Value+"']");}
+
     By feedPosts = By.xpath("//div[contains(@id,'research_report')]");
     By savedSearch(String searchValue)  { return By.xpath("//div[@id='saved-searches-dashboard-list']//p[text()='"+searchValue+"']"); }
     By searchTextBox = By.id("search-text");
@@ -36,6 +37,10 @@ public class DashboardPage extends BasePage {
     By CommentLink = By.xpath("//a[@aria-controls=\"collapse-comments\"]/span");
     By CommentTextBox = By.id("comment_message");
     By ResearchReportLink =By.className("research-report-link");
+    By CreateNewEvent =By.xpath("//a[@class='btn btn-primary'][text()='Create New Event']");
+    By UploadResearch = By.xpath("//a[@class='btn btn-primary'][text()='Upload Research']");
+
+
 
 
 
@@ -63,10 +68,7 @@ public class DashboardPage extends BasePage {
         ClickOn(savedSearch(searchValue));
     }
 
-    @Then("^I should direct to the \"([^\"]*)\" tab$")
-    public void i_should_direct_to_the_tab(String tabName) throws Throwable {
-        Assert.assertTrue(isAttributeValuePresent( DashBoardTab(tabName),"class","active"));
-    }
+
 
     @Then("^I should see \"([^\"]*)\" in search textbox$")
     public void i_should_see_in_search_textbox(String value) throws Throwable {
@@ -107,10 +109,26 @@ public class DashboardPage extends BasePage {
         WebElement firstFeed =  getWebElements(feedPosts).get(0);
         int CurrentcommentCount =Integer.parseInt(firstFeed.findElement(CommentLink).getText().replaceAll("[^A-Za-z0-9]",""));
         Assert.assertEquals(CurrentcommentCount,commmentCount+1);
+
+
+    }
+    @When("^I navigate to the first feed$")
+    public void i_navigate_to_the_first_feed() throws Throwable {
+        WebElement firstFeed =  getWebElements(feedPosts).get(0);
+       ReportName = firstFeed.findElement(ResearchReportLink).getText();
         firstFeed.findElement(ResearchReportLink).click();
 
     }
 
+    @When("^I click on create event$")
+    public void i_click_on_create_event() throws Throwable {
 
+        ClickOn(CreateNewEvent);
 
+    }
+
+    @When("^I click on upload research$")
+    public void i_click_on_upload_research() throws Throwable {
+        ClickOn(UploadResearch);
+    }
 }
